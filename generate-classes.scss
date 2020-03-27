@@ -1,0 +1,26 @@
+$font-size_line-height: (16: 19, 18: 21, 22: 26, 30: 35, 45: 55, 50: 58, 65: 80);
+$prefixes: (margin: m, padding: p);
+$directions: (l: left, t: top, r: right, b: bottom, h: (left, right), v: (top, bottom));
+$margins-paddings: (0, 4, 8, 16, 24, 32, 40, 64);
+
+@each $value in $margins-paddings {
+  @each $prop, $prefix in $prefixes {  
+      .#{$prefix}-#{$value}:not(._) {
+        #{$prop}: #{$value}px;
+      }
+    @each $letter, $direction in $directions {  
+      .#{$prefix}#{$letter}-#{$value}:not(._) {
+        @each $d in $direction {      
+          #{$prop}-#{$d}: #{$value}px;
+        }
+      }
+    }
+  }
+}
+
+@each $fs, $lh in $font-size_line-height {
+  .fs-#{$fs} {
+    font-size: #{$fs}px;
+    line-height: #{$lh}px;
+  }
+}

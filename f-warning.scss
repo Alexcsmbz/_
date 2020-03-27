@@ -1,0 +1,49 @@
+@import './vars.scss';
+
+$f-warning: (
+  var: (
+    default-icon-key: 'warning-stroke',
+  ),
+  'p-border': (
+    default: (
+      border-color: $warning-color,
+    ),
+    input: (
+      border-color: $warning-color,
+    ),
+  ),
+
+  'p-input': (
+    default: (
+      --color: $warning-color,
+      --placeholder-color: $warning-color,
+    ),
+  ),
+
+  'p-text': (
+    default: (
+      color: $warning-color,
+    ),
+    hint: (
+      color: $warning-color,
+    ),
+    accent: (
+      color: $warning-color,
+    ),
+  ),
+
+  'icon': (
+    default: (
+      fill: $warning-color,
+    ),
+    hint: (
+      fill: $warning-color,
+    ),
+    accent: (
+      fill: $warning-color,
+    ),
+    error: (
+      fill: $warning-color,
+    )
+  ),
+)

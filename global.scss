@@ -1,0 +1,51 @@
+@import "~scss/vars";
+@import "~scss/mixins";
+@import "~scss/functions";
+@import "~scss/controls/carousel";
+@import "~scss/controls/uppy";
+@import "~scss/generate/generate-theme";
+@import "~scss/scaffolding";
+@import "~scss/controls/index";
+
+html {
+  box-sizing: border-box;
+  background-color: v(background);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  @include set-font;
+  min-width: $min-width;
+  margin: 0;
+  counter-reset: count;
+}
+
+#app-root {
+  overflow-x: hidden;
+}
+
+ul {
+  @include list-reset;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  @include set-font;
+  text-decoration: none;
+}
+
+button {
+  @include set-font;
+  box-sizing: border-box;
+}
+
+@include generateTheme;
